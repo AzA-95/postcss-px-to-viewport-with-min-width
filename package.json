@@ -1,0 +1,65 @@
+{
+	"name": "postcss-px-to-viewport-with-min-width",
+	"version": "1.0.0",
+	"description": "PostCSS plugin for convert px to vw and include changes to @media min-width",
+	"keywords": [
+		"postcss",
+		"css",
+		"px-to-vw",
+		"postcss-plugin",
+		"postcss-px-to-vw",
+		"postcss-px-to-viewport"
+	],
+	"type": "module",
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"build": "rollup --config rollup.config.mjs",
+		"lint": "npx eslint . --ext .ts",
+		"test": "node --import tsx --test --test-reporter=@reporters/mocha test/index.test.ts"
+	},
+	"author": "Azat Zinnurov <a.zinnurov95@gmail.com>",
+	"license": "MIT",
+	"repository": "https://github.com/AzA-95/postcss-px-to-viewport-with-min-width",
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"peerDependencies": {
+		"postcss": "^8.4.27"
+	},
+	"devDependencies": {
+		"@reporters/mocha": "^1.0.1",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@typescript-eslint/eslint-plugin": "^7.9.0",
+		"@typescript-eslint/parser": "^7.9.0",
+		"eslint": "^8.47.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-airbnb-typescript": "^18.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"lint-staged": "^15.2.2",
+		"postcss": "^8.4.27",
+		"prettier": "^3.2.5",
+		"rollup-plugin-delete": "^2.0.0",
+		"tslib": "^2.6.2",
+		"tsx": "^4.10.5"
+	},
+	"mocha": {
+		"reporter": "list"
+	},
+	"dependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"rollup": "^4.17.2"
+	}
+}
